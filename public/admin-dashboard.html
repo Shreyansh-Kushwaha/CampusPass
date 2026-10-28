@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Allura&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2714%27 fill=%27none%27 stroke=%27%231f3d2b%27 stroke-width=%272%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%23b08d3c%27/%3E%3C/svg%3E">
+<title>Dashboard · CampusPass Admin</title>
+</head>
+<body>
+<header class="nav" id="nav"></header>
+<main class="admin-shell">
+<aside class="admin-side"><span class="eyebrow">Administration</span><nav id="adminNav"></nav></aside>
+<section class="admin-main">
+
+<div class="page-head"><div><span class="eyebrow">Overview</span><h1>Dashboard</h1></div><a href="/admin-events?new=1" class="btn btn-primary">+ New event</a></div>
+<div class="grid grid-4" id="stats">
+  <div class="card stat"><span class="label">Total events</span><span class="value" id="sEvents">–</span><span class="sub" id="sEventsSub"></span></div>
+  <div class="card stat"><span class="label">Registrations</span><span class="value" id="sRegs">–</span><span class="sub" id="sRegsSub"></span></div>
+  <div class="card stat"><span class="label">Checked in</span><span class="value" id="sChecked">–</span><span class="sub">attendees scanned</span></div>
+  <div class="card stat"><span class="label">Attendance rate</span><span class="value" id="sRate">–</span><span class="sub">checked-in ÷ registered</span></div>
+</div>
+<div class="grid grid-2" style="margin-top:1.5rem;align-items:start">
+  <div class="card"><div class="card-body"><h3>Registrations by category</h3><div class="bar-chart" id="catChart"></div></div></div>
+  <div class="card"><div class="card-body"><h3>Recent registrations</h3><ul class="log" id="recent"></ul></div></div>
+</div>
+<div class="section-head" style="margin-top:2.5rem"><h2 style="font-size:1.8rem">Most popular events</h2><a href="/admin-events" class="btn btn-ghost btn-sm">All events</a></div>
+<div class="table-wrap"><table><thead><tr><th>Event</th><th>Date</th><th>Status</th><th>Registered</th><th>Checked in</th><th></th></tr></thead><tbody id="topEvents"></tbody></table></div>
+</section>
+</main>
+<script src="/js/app.js"></script>
+<script src="/js/admin.js"></script>
+
+<script src="/js/admin-dashboard.js"></script>
+</body>
+</html>

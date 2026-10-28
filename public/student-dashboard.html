@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Allura&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2714%27 fill=%27none%27 stroke=%27%231f3d2b%27 stroke-width=%272%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%23b08d3c%27/%3E%3C/svg%3E">
+<title>My Tickets · CampusPass</title>
+</head>
+<body>
+<header class="nav" id="nav"></header>
+<main>
+
+<section class="dash-head">
+  <div class="container">
+    <span class="script" id="greetScript">Good to see you</span>
+    <h1 id="greeting">Your dashboard</h1>
+    <p class="lede" id="greetSub">Your registrations and tickets, all in one place.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:2.5rem">
+  <div class="container">
+    <div class="grid grid-4" id="stats">
+      <div class="card stat"><span class="label">Total registrations</span><span class="value" id="sTotal">–</span></div>
+      <div class="card stat"><span class="label">Upcoming events</span><span class="value" id="sUpcoming">–</span></div>
+      <div class="card stat"><span class="label">Tickets available</span><span class="value" id="sTickets">–</span></div>
+      <div class="card stat"><span class="label">Events attended</span><span class="value" id="sAttended">–</span></div>
+    </div>
+    <div class="section-head" style="margin-top:3rem"><h2>Upcoming</h2><a href="/events" class="btn btn-ghost btn-sm">Find more events</a></div>
+    <div class="stack" id="upcomingList"></div>
+    <div id="pastSection" class="hidden">
+      <div class="section-head" style="margin-top:3rem"><h2>Past &amp; cancelled</h2></div>
+      <div class="stack" id="pastList"></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer id="footer"></footer>
+<script src="/js/app.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

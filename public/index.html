@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Allura&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2714%27 fill=%27none%27 stroke=%27%231f3d2b%27 stroke-width=%272%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%23b08d3c%27/%3E%3C/svg%3E">
+<title>Home · CampusPass</title>
+</head>
+<body>
+<header class="nav" id="nav"></header>
+<main>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="script">Welcome to campus life</span>
+      <h1>Every event on campus,<br><em>one elegant pass.</em></h1>
+      <p class="lede">Discover lectures, festivals, hackathons and matches across the college. Register in seconds and carry a beautiful QR ticket on your phone.</p>
+      <div class="hero-actions">
+        <a href="/events" class="btn btn-primary btn-lg">Browse events</a>
+        <a href="/register" class="btn btn-outline btn-lg" id="heroCta">Create your account</a>
+      </div>
+      <div class="hero-stats" id="heroStats">
+        <div><span id="statEvents">–</span><small>Upcoming events</small></div>
+        <div><span id="statCats">–</span><small>Categories</small></div>
+        <div><span id="statSeats">–</span><small>Open seats</small></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="invite" id="heroInvite">
+        <span class="script">You are invited</span>
+        <h3 id="inviteTitle">Annual Cultural Night</h3>
+        <div class="meta" id="inviteMeta">Open-Air Amphitheatre</div>
+        <div class="qr-placeholder" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div><span class="eyebrow">This season</span><h2>Featured &amp; upcoming</h2></div>
+      <a href="/events" class="btn btn-ghost">View all events</a>
+    </div>
+    <div class="toolbar">
+      <div class="search"><span id="searchIcon"></span><input type="search" id="search" placeholder="Search events by title or description" aria-label="Search events"></div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="grid grid-3" id="eventGrid"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream);border-top:1px solid var(--line)">
+  <div class="container">
+    <span class="eyebrow">How it works</span>
+    <h2 style="max-width:18ch">From discovery to the door in three steps</h2>
+    <div class="features" style="margin-top:2.5rem">
+      <div class="feature"><span class="num">No. 1</span><h3>Discover</h3><p>Browse every published event across departments, filter by category and search by keyword.</p></div>
+      <div class="feature"><span class="num">No. 2</span><h3>Register</h3><p>One click secures your seat. Capacity, deadlines and duplicates are enforced so it is always fair.</p></div>
+      <div class="feature"><span class="num">No. 3</span><h3>Arrive</h3><p>Show your QR ticket at the entrance. Organisers scan it once and your attendance is recorded.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer id="footer"></footer>
+<script src="/js/app.js"></script>
+<script src="/js/home.js"></script>
+</body>
+</html>

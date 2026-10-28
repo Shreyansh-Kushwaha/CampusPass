@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Allura&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2714%27 fill=%27none%27 stroke=%27%231f3d2b%27 stroke-width=%272%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%23b08d3c%27/%3E%3C/svg%3E">
+<title>Check-in · CampusPass Admin</title>
+</head>
+<body>
+<header class="nav" id="nav"></header>
+<main class="admin-shell">
+<aside class="admin-side"><span class="eyebrow">Administration</span><nav id="adminNav"></nav></aside>
+<section class="admin-main">
+
+<div class="page-head"><div><span class="eyebrow">Entrance</span><h1>Ticket check-in</h1><p class="muted" style="margin:0">Scan a QR code or type the ticket code. Every ticket is verified on the server.</p></div></div>
+<div class="field" style="max-width:480px"><label for="eventSelect">Event being checked in</label><select id="eventSelect"></select></div>
+<div class="grid grid-2" style="align-items:start">
+  <div class="stack">
+    <div class="scanner" id="scanner">
+      <video id="video" playsinline muted class="hidden"></video>
+      <canvas id="canvas"></canvas>
+      <div class="reticle hidden" id="reticle"></div>
+      <div class="overlay" id="overlay"><div><p>Camera scanning is available on devices with a camera over HTTPS or localhost.</p><button class="btn btn-gold" id="startCam">Start camera</button></div></div>
+    </div>
+    <div class="row between"><span class="muted small" id="camStatus">Camera off</span><button class="btn btn-ghost btn-sm hidden" id="stopCam">Stop camera</button></div>
+    <form id="manualForm" class="card"><div class="card-body">
+      <div class="field"><label for="token">Manual ticket code</label><input id="token" name="token" class="mono" placeholder="CP-XXXX-XXXX-XXXX-XXXX" autocomplete="off" autocapitalize="characters"></div>
+      <div class="form-actions" style="justify-content:flex-start"><button type="button" class="btn btn-outline" id="verifyBtn">Verify only</button><button type="submit" class="btn btn-primary" id="checkinBtn">Check in</button></div>
+    </div></form>
+  </div>
+  <div class="stack">
+    <div class="result-card" id="result"><span class="eyebrow">Result</span><p class="muted">Scan or enter a ticket to see the attendee details here.</p></div>
+    <div class="card"><div class="card-body"><div class="row between"><h4 style="margin:0">Session log</h4><span class="muted small" id="logCount">0 scanned</span></div><ul class="log" id="log"></ul></div></div>
+  </div>
+</div>
+</section>
+</main>
+<script src="/js/app.js"></script>
+<script src="/js/admin.js"></script>
+<script src="/vendor/jsQR.js"></script>
+<script src="/js/admin-checkin.js"></script>
+</body>
+</html>

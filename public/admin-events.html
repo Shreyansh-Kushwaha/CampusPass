@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Allura&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2714%27 fill=%27none%27 stroke=%27%231f3d2b%27 stroke-width=%272%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%23b08d3c%27/%3E%3C/svg%3E">
+<title>Events · CampusPass Admin</title>
+</head>
+<body>
+<header class="nav" id="nav"></header>
+<main class="admin-shell">
+<aside class="admin-side"><span class="eyebrow">Administration</span><nav id="adminNav"></nav></aside>
+<section class="admin-main">
+
+<div class="page-head"><div><span class="eyebrow">Manage</span><h1>Events</h1></div><button class="btn btn-primary" id="newBtn">+ New event</button></div>
+<div class="toolbar">
+  <div class="search"><span id="searchIcon"></span><input type="search" id="search" placeholder="Search by title or venue"></div>
+  <select id="statusFilter" style="width:auto"><option value="">All statuses</option><option value="draft">Draft</option><option value="published">Published</option><option value="closed">Closed</option><option value="cancelled">Cancelled</option></select>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Event</th><th>Schedule</th><th>Status</th><th>Capacity</th><th style="text-align:right">Actions</th></tr></thead><tbody id="rows"></tbody></table></div>
+<div id="emptyWrap"></div>
+<template id="formTpl">
+  <form id="eventForm" novalidate>
+    <div id="formAlert"></div>
+    <div class="field"><label for="f_title">Title</label><input id="f_title" name="title" required maxlength="120"></div>
+    <div class="field"><label for="f_description">Description</label><textarea id="f_description" name="description" required></textarea></div>
+    <div class="form-grid">
+      <div class="field"><label for="f_category">Category</label><select id="f_category" name="category" required></select></div>
+      <div class="field"><label for="f_venue">Venue</label><input id="f_venue" name="venue" required></div>
+      <div class="field"><label for="f_start">Starts</label><input type="datetime-local" id="f_start" name="start_datetime" required></div>
+      <div class="field"><label for="f_end">Ends</label><input type="datetime-local" id="f_end" name="end_datetime" required></div>
+      <div class="field"><label for="f_deadline">Registration deadline</label><input type="datetime-local" id="f_deadline" name="registration_deadline" required><span class="hint">Must be on or before the start.</span></div>
+      <div class="field"><label for="f_capacity">Capacity</label><input type="number" id="f_capacity" name="capacity" min="1" max="100000" required></div>
+      <div class="field"><label for="f_status">Status</label><select id="f_status" name="status"><option value="draft">Draft (hidden)</option><option value="published">Published</option><option value="closed">Registration closed</option><option value="cancelled">Cancelled</option></select></div>
+    </div>
+    <div class="form-actions"><button type="button" class="btn btn-ghost" id="cancelForm">Cancel</button><button type="submit" class="btn btn-primary" id="saveBtn">Save event</button></div>
+  </form>
+</template>
+</section>
+</main>
+<script src="/js/app.js"></script>
+<script src="/js/admin.js"></script>
+
+<script src="/js/admin-events.js"></script>
+</body>
+</html>

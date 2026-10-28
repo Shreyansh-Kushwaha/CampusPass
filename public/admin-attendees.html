@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Allura&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2714%27 fill=%27none%27 stroke=%27%231f3d2b%27 stroke-width=%272%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%23b08d3c%27/%3E%3C/svg%3E">
+<title>Attendees · CampusPass Admin</title>
+</head>
+<body>
+<header class="nav" id="nav"></header>
+<main class="admin-shell">
+<aside class="admin-side"><span class="eyebrow">Administration</span><nav id="adminNav"></nav></aside>
+<section class="admin-main">
+
+<div class="page-head"><div><span class="eyebrow">Attendance</span><h1 id="title">Attendees</h1><p class="muted" id="subtitle" style="margin:0"></p></div>
+  <div class="row"><a class="btn btn-ghost" id="csvBtn" href="#">Export CSV</a><a class="btn btn-primary" id="checkinBtn" href="#">Open check-in</a></div></div>
+<div class="field" style="max-width:420px"><label for="eventSelect">Event</label><select id="eventSelect"></select></div>
+<div class="grid grid-4" id="counts">
+  <div class="card stat"><span class="label">Registered</span><span class="value" id="cReg">–</span></div>
+  <div class="card stat"><span class="label">Checked in</span><span class="value" id="cIn">–</span></div>
+  <div class="card stat"><span class="label">Not yet arrived</span><span class="value" id="cOut">–</span></div>
+  <div class="card stat"><span class="label">Capacity</span><span class="value" id="cCap">–</span></div>
+</div>
+<div class="toolbar" style="margin-top:1.5rem">
+  <div class="search"><span id="searchIcon"></span><input type="search" id="search" placeholder="Search name, email or ticket code"></div>
+  <select id="statusFilter" style="width:auto"><option value="">All registrations</option><option value="confirmed">Confirmed</option><option value="checked_in">Checked in</option><option value="not_checked_in">Not checked in</option><option value="cancelled">Cancelled</option></select>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Student</th><th>Ticket code</th><th>Registered</th><th>Status</th><th>Checked in</th></tr></thead><tbody id="rows"></tbody></table></div>
+<div class="pager"><span id="pageInfo"></span><div class="row"><button class="btn btn-ghost btn-sm" id="prev">Previous</button><button class="btn btn-ghost btn-sm" id="next">Next</button></div></div>
+</section>
+</main>
+<script src="/js/app.js"></script>
+<script src="/js/admin.js"></script>
+
+<script src="/js/admin-attendees.js"></script>
+</body>
+</html>

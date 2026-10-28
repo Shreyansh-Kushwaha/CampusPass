@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Allura&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2714%27 fill=%27none%27 stroke=%27%231f3d2b%27 stroke-width=%272%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%23b08d3c%27/%3E%3C/svg%3E">
+<title>Create account · CampusPass</title>
+</head>
+<body>
+<header class="nav" id="nav"></header>
+<main>
+<div class="auth-wrap">
+  <aside class="auth-side">
+    <a href="/" class="brand"><span class="brand-mark"></span>CampusPass</a>
+    <div>
+      <span class="script">Join the campus</span>
+      <h2>One account for every event.</h2>
+      <p>Create your student account to register for events, receive QR tickets and keep a record of everything you attend.</p>
+    </div>
+    <p class="auth-quote">"Show up. Be counted. Remember it."</p>
+  </aside>
+  <div class="auth-form">
+    <div class="auth-card">
+      <h1>Create account</h1>
+      <p class="lede">Student registration takes less than a minute.</p>
+      <div id="alert"></div>
+      <form id="registerForm" novalidate>
+        <div class="field"><label for="full_name">Full name</label><input type="text" id="full_name" name="full_name" autocomplete="name" required placeholder="Priya Sharma"></div>
+        <div class="field"><label for="email">College email</label><input type="email" id="email" name="email" autocomplete="email" required placeholder="you@college.edu"></div>
+        <div class="field"><label for="password">Password</label><input type="password" id="password" name="password" autocomplete="new-password" required minlength="8" placeholder="At least 8 characters"><span class="hint">Minimum 8 characters.</span></div>
+        <div class="field"><label for="confirm_password">Confirm password</label><input type="password" id="confirm_password" name="confirm_password" autocomplete="new-password" required></div>
+        <button class="btn btn-primary btn-block btn-lg" type="submit" id="submitBtn">Create account</button>
+      </form>
+      <p class="auth-foot">Already have an account? <a href="/login">Log in</a></p>
+    </div>
+  </div>
+</div>
+</main>
+<script src="/js/app.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>
